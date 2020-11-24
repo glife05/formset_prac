@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Inline Formset</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>More</th>
+        </tr>
+        {% for q in qs %}
+        <tr>
+            <td>{{q.id}}</td>
+            <td>{{q.name}}</td>
+            <td><a href="{% url 'listing' q.id %}">Open</a></td>
+        </tr>
+       {% endfor %}
+    </table>
+</body>
+</html>
